@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Proxy</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Access Unrestricted Searches</h1>
+    <p>Press the button below to open a tab with unrestricted searches:</p>
+    <button onclick="accessUnrestrictedSearch()">Search Unrestricted</button>
+  </div>
+
+  <script>
+    function accessUnrestrictedSearch() {
+      // Open a new tab with about:blank
+      let newTab = window.open('about:blank', '_blank');
+      // When the about:blank tab is loaded, set its content to Bing search
+      newTab.onload = function() {
+        newTab.location.href = 'https://www.bing.com/';
+      };
+    }
+  </script>
+</body>
+</html>
